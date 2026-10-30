@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* High-polish smooth page transition */
+@keyframes pageFadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition-enter {
+  animation: pageFadeSlideIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity, transform;
+}
+
+/* Donezo Striped Pattern for Pending / Target Bar items */
+.striped-bar-pattern {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(21, 77, 63, 0.12),
+    rgba(21, 77, 63, 0.12) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  background-color: #F0F4F2;
+}
+
+.dark .striped-bar-pattern {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.08) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  background-color: #1A232C;
+}
+
+/* Donezo Gauge Striped Pattern */
+.striped-gauge-pattern {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(21, 77, 63, 0.2),
+    rgba(21, 77, 63, 0.2) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #2A3642;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
