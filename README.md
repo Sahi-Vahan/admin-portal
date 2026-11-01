@@ -3,6 +3,21 @@
 > **"Sahi Gaadi. Sahi Faisla."**  
 > Central Operations, SLA Dispatch Radar, QA Audit, and Escrow Financial Settlement Command Center for the SahiVahan ecosystem.
 
+### 🌐 Live Production URL
+👉 **[https://sahivahan-adminportal.netlify.app/admin/dashboard](https://sahivahan-adminportal.netlify.app/admin/dashboard)**
+
+> **Demo Access**: The login screen (`/admin/login`) provides 1-click role presets for Super Admin, Operations, Quality Reviewer, and Finance Controller to explore all features instantly without credentials.
+
+---
+
+## 🌐 Live Deployments & Ecosystem Links
+
+| Application | Live Deployed URL | Target Users |
+| :--- | :--- | :--- |
+| **Admin Command Center** (Current) | **[sahivahan-adminportal.netlify.app/admin/dashboard](https://sahivahan-adminportal.netlify.app/admin/dashboard)** | Dispatchers, QA Auditors, Fleet Managers, Finance Controllers |
+| **Customer Portal** | **[sahivahan.netlify.app](https://sahivahan.netlify.app/)** | Used Car & Bike Buyers across India |
+| **Specialist Field App** | **[sahivahan-spl.netlify.app/specialist/dashboard](https://sahivahan-spl.netlify.app/specialist/dashboard)** | Certified Automotive Mechanics & Field Technicians |
+
 ---
 
 ## 📌 Overview
@@ -264,8 +279,13 @@ Generates an optimized, production-ready bundle in `dist/`.
 npm run preview
 ```
 
+### Netlify Deployment Configuration (SPA Reload Fix)
+This Single Page Application uses client-side routing via React Router v6. To prevent `404 Not Found` errors when users refresh or reload nested routes like `/admin/dashboard` or `/admin/bookings`, the project includes:
+1. `public/_redirects`: Contains `/*  /index.html  200` which Vite copies into `dist/_redirects` during build.
+2. `netlify.toml`: Contains the Netlify build settings and catch-all redirect rule to `/index.html`.
+
 ---
 
 ## 🔗 Related Applications in SahiVahan
-- [Customer Portal (`apps/customer-portal`)](../customer-portal/README.md) — Consumer booking funnel, 7-stage live tracking, and interactive vehicle health reports.
-- [Specialist Field App (`apps/specialist-app`)](../specialist-app/README.md) — Technician mobile-first web app for field check-in, 200+ point checklist execution, and escrow wallet.
+- [Customer Portal](https://sahivahan.netlify.app/) — Consumer booking funnel, 7-stage live tracking, and interactive vehicle health reports.
+- [Specialist Field App](https://sahivahan-spl.netlify.app/specialist/dashboard) — Technician mobile-first web app for field check-in, 200+ point checklist execution, and escrow wallet.
